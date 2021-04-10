@@ -7,7 +7,7 @@ The main of the project was to research and learn how to make any media accessib
 
 ```python
 
-1. git clone https://github.com/elina-petrova/Petrova_E_V_Zdir_RokuFlashback
+1. git clone
 
 2. npm install
 
@@ -18,7 +18,7 @@ The main of the project was to research and learn how to make any media accessib
 
 ## Documentations
 
-[Roadmap](https://docs.google.com/document/d/1gauAooCEiezyV8Q7QeFuYy-B4L0LZsN1bX9F0lhYsro/edit?usp=sharing).
+[Roadmap](https://docs.google.com/document/d/1QTQCjp9IO01QigfbL1FQWV37jEoZvnH84U9Qm7NTVTM/edit?usp=sharing).
 
 ## Authors
 
