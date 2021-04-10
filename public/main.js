@@ -89,3 +89,23 @@ subtitles.addEventListener('click', function (e) {
         subtitlesMenu.style.display = (subtitlesMenu.style.display == 'block' ? 'none' : 'block');
     }
 });
+
+var dialogueTimings = [0, 34, 36, 39, 43, 45, 47, 51, 57, 62, 67, 73, 76, 78, 82, 85, 88, 91, 96, 102, 106, 110, 154, 156, 158, 160, 165, 168, 170, 175, 180, 187, 201, 204, 208, 213, 218, 224];
+var dialogues = document.querySelectorAll('#transcript>li');
+var transcriptWrapper = document.querySelector('#transcriptWrapper');
+var audio = document.querySelector('#audio');
+var previousDialogueTime = -1;
+
+function playTranscript() {
+    var currentDialogueTime = Math.max.apply(Math, dialogueTimings.filter(function (v) { return v <= audio.currentTime }));
+
+    if (previousDialogueTime !== currentDialogueTime) {
+        previousDialogueTime = currentDialogueTime;
+        var currentDialogue = dialogues[dialogueTimings.indexOf(currentDialogueTime)];
+        transcriptWrapper.scrollTop = currentDialogue.offsetTop - 50;
+        var previousDialogue = document.getElementsByClassName('speaking')[0];
+        if (previousDialogue !== undefined)
+            previousDialogue.className = previousDialogue.className.replace('speaking', '');
+        currentDialogue.className += ' speaking';
+    }
+}
